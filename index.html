@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebApp</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700,900&display=swap"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- Maps -->
+
+    <!-- Maps/ -->
+    <!-- Slider -->
+    <script>
+      // buttons
+      var sliderControl = document.querySelector(".slider-control");
+
+      // slides informations
+      var slides = document.querySelectorAll(".slide"),
+        slidesLength = slides.length;
+
+      // slides array
+      var slidesArr = [].slice.call(slides);
+
+      // reverse array sorting
+      slidesArr = slidesArr.reverse();
+
+      // slide current
+      var slideCurrent = 0;
+
+      sliderControl.addEventListener("click", function (e) {
+        target = e.target;
+
+        // get next button
+        if (target.classList.contains("next")) {
+          (next = e.target),
+            (prev = next.previousElementSibling),
+            (nextSlide = slidesArr[slideCurrent + 1]),
+            (slide = slidesArr[slideCurrent]);
+
+          slide.classList.add("slide-on");
+          slide.classList.remove("text-on");
+          nextSlide.classList.add("text-on");
+
+          slideCurrent += 1;
+
+          if (slideCurrent > 0) {
+            prev.classList.remove("disabled");
+          }
+
+          if (slideCurrent === slidesLength - 1) {
+            next.classList.add("disabled");
+          }
+        }
+
+        // get prev button
+        if (target.classList.contains("prev")) {
+          slideCurrent -= 1;
+
+          (prev = e.target),
+            (next = prev.nextElementSibling),
+            (prevSlide = slidesArr[slideCurrent + 1]),
+            (slide = slidesArr[slideCurrent]);
+
+          prevSlide.classList.remove("text-on");
+          slide.classList.remove("slide-on");
+          slide.classList.add("text-on");
+
+          if (slideCurrent === slidesLength - 2) {
+            next.classList.remove("disabled");
+          }
+
+          if (slideCurrent === 0) {
+            prev.classList.add("disabled");
+          }
+        }
+      });
+
+      balapaCop("Image Slider", "#999");
+    </script>
+    <!-- Slider/ -->
+  </head>
+  <body>
+    <div class="upper">
+      <div class="title">
+        <img
+          class="title-bg"
+          id="home"
+          style="max-width: 100%; overflow: hidden"
+          src="public\img\1.jpg"
+          alt="bg"
+        />
+        <!-- <span
+          class="titel-note"
+          style="
+            position: absolute;
+            top: 58em;
+            left: 2em;
+            font-size: 0.1em;
+            color: rgb(233, 139, 52);
+          "
+          >Here Click!</span
+        > -->
+        <span
+          ><a href="#menu" class="href href-home-icon"
+            ><img
+              class="icon-down"
+              src="public/icon/downarrow.png"
+              width="100%"
+              style="position: absolute" /></a
+        ></span>
+        <span
+          class="title"
+          style="
+            position: absolute;
+            top: 5.8em;
+            left: 0.2em;
+            color: rgb(208, 90, 110);
+          "
+          >Winter's Workshop</span
+        >
+
+        <!-- href-icons -->
+        <a href="#home" class="href href-icon" id="menu"
+          ><img
+            class="icon"
+            src="public/icon/home.png"
+            width="100%"
+            style="position: absolute"
+        /></a>
+        <a href="#profi" class="href href-icon"
+          ><img
+            class="icon"
+            src="public/icon/user.png"
+            width="100%"
+            style="position: absolute"
+        /></a>
+        <a href="https://www.youtube.de" target="__blank" class="href href-icon"
+          ><img
+            class="icon"
+            src="public/icon/youtube.png"
+            width="100%"
+            style="position: absolute"
+        /></a>
+        <a href="#mail" class="href href-icon"
+          ><img
+            class="icon"
+            src="public/icon/telegram.png"
+            width="100%"
+            style="position: absolute"
+        /></a>
+        <a href="#googlemap" class="href href-icon"
+          ><img
+            class="icon"
+            src="public/icon/maps.png"
+            width="100%"
+            style="position: absolute"
+        /></a>
+        <!-- href-icons/ -->
+      </div>
+
+      <!-- menu -->
+      <div class="menu-body">
+        <div class="background-one">
+          <div class="link-container">
+            <a
+              class="link-one links-menu"
+              href="https://www.stepstone.de/profile/"
+              >Stepstone</a
+            >
+          </div>
+        </div>
+        <div class="background-two link-container">
+          <a class="link-two links-menu" href="https://github.com/WentaoLLL/"
+            >Github</a
+          >
+        </div>
+        <div class="background-three link-container">
+          <a
+            class="link-three links-menu"
+            href="https://www.facebook.com/wentao.liu.3766/"
+            >Facebook</a
+          >
+        </div>
+      </div>
+
+      <div class="all-tasks">
+        <h2 class="task-list-title" id="profi">My Profi</h2>
+        <ul class="task-list">
+          <li class="list-name active-list">Webentwickler</li>
+          <li class="list-name">M.Sc. Digitale Technologien</li>
+          <li class="list-name">B.Sc. Digitale Technologien</li>
+          <li class="list-name">Projekte</li>
+        </ul>
+
+        <form action="">
+          <input
+            type="text"
+            class="new list"
+            placeholder="new profi"
+            aria-label="new profi"
+          />
+          <button class="btn list" aria-label="create new list">+</button>
+        </form>
+      </div>
+
+      <div class="todo-list">
+        <div class="todo-header">
+          <h2 class="list-title">Webentwickler</h2>
+          <p class="task-count">3 Elements inside</p>
+
+          <div class="todo-body">
+            <div class="tasks">
+              <div class="task">
+                <input type="checkbox" id="task-1" />
+                <label for="task-1">
+                  <span class="custom-checkbox"></span>
+                  HTML, CSS/SASS, Javascript
+                </label>
+              </div>
+              <!-- /task-1 -->
+
+              <div class="task">
+                <input type="checkbox" id="task-2" />
+                <label for="task-2">
+                  <span class="custom-checkbox"></span>
+                  Vue.JS, Node.JS, EJS
+                </label>
+              </div>
+              <!-- /task-2 -->
+
+              <div class="task">
+                <input type="checkbox" id="task-3" />
+                <label for="task-3">
+                  <span class="custom-checkbox"></span>
+                  MongoDB, DB2, MySQL
+                </label>
+              </div>
+              <!-- /task-3 -->
+            </div>
+
+            <div class="new-task-creator">
+              <form action="">
+                <input
+                  type="text"
+                  class="new task"
+                  placeholder="new task name"
+                  aria-label="new task name"
+                />
+                <button class="btn create" aria-label="create new task">
+                  +
+                </button>
+              </form>
+            </div>
+            <div class="delete-stuff">
+              <button class="btn delete">Clear selected elements</button>
+              <button class="btn delete">Delete this list</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lower">
+      <div class="content-box">
+        <div style="margin-bottom: 1vh" class="content content--card">
+          <div class="card">
+            <h5
+              class="card-title"
+              style="font-size: 35px; color: rgb(208, 90, 110)"
+            >
+              <img
+                src="public/icon/projects.png"
+                width="5%"
+                style="position: relative; top: 2px"
+              />
+              Winter's Projects
+            </h5>
+            <p class="card__body" style="color: seashell">
+              Some of my Projects have be exhibited below. DICOM-Server,
+              Lora-Project and etc.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="zone-1 zones-items"> -->
+      <img
+        class="zone-1 zones-items zoneimg"
+        style="max-width: 100%; overflow: hidden"
+        src="public\img\R6-3.jpg"
+        alt="bg"
+      />
+      <!-- </div> -->
+      <!-- <div class="zone-2 zones-items"> -->
+      <img
+        class="zone-2 zones-items zoneimg"
+        style="max-width: 100%; overflow: hidden"
+        src="public\img\R6-1.jpg"
+        alt="bg"
+      />
+      <!-- </div> -->
+      <!-- <div class="zone-3 zones-items"> -->
+      <img
+        class="zone-3 zones-items zoneimg"
+        style="max-width: 100%; overflow: hidden"
+        src="public\img\3.jpg"
+        alt="bg"
+      />
+      <!-- </div> -->
+      <img
+        class="zone-4 zones-items zoneimg"
+        style="max-width: 100%; overflow: hidden; background-repeat: repeat-y"
+        src="public\img\2.jpg"
+        alt="bg"
+      />
+      <!-- <img
+        class="zone-5 zones-items"
+        style="max-width: 100%; overflow: hidden; object-fit: cover"
+        src="public\img\3.jpg"
+        alt="bg"
+      /> -->
+
+      <!-- map -->
+      <div
+        class="googlemap"
+        id="googlemap"
+        onload="initialize()"
+        style="margin-top: 4%"
+      >
+        <!-- <span style="position: relative; left: 0%"><p>Map</p></span> -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2426.8050092860503!2d13.273476316007617!3d52.53696204272412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a856b7f70e13d7%3A0xf51422df920e3a76!2sPopitzweg%2C%20Berlin!5e0!3m2!1szh-CN!2sde!4v1643222805043!5m2!1sen!2sde"
+          width="100%"
+          height="600"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+      <!-- map/ -->
+
+      <!-- Slider -->
+      <div class="fb-share" style="margin-top: 4%">
+        <iframe
+          src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fwentao.liu.3766%2Fposts%2F371962029827176%3A1&show_text=true&width=500"
+          width="100%"
+          height="600"
+          style="border: none; overflow: hidden"
+          scrolling="no"
+          frameborder="0"
+          allowfullscreen="true"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+        ></iframe>
+      </div>
+      <!-- Slider/ -->
+    </div>
+
+    <div class="content-box-footer">
+      <div style="margin-bottom: 1vh" class="content content--card">
+        <div class="card">
+          <h5
+            class="card-title"
+            style="font-size: 35px; color: rgb(208, 90, 110)"
+          >
+            <img
+              src="public/icon/projects.png"
+              width="5%"
+              style="position: relative; top: 2px"
+            />
+            Footer
+          </h5>
+          <p class="card__body" style="color: seashell">
+            Some of my Projects have be exhibited below. DICOM-Server,
+            Lora-Project and etc.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
