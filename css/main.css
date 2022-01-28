@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
 :root {
   --clr-primary: #c2624a;
   --clr-light: #f4f4f4;
@@ -20,7 +21,7 @@
   background-color: var(--clr-light);
   color: var(--clr-dark);
   display: grid;
-  grid: "header header header header" auto "...... menu   menu   ......" auto "...... lists  active ......" auto "...... map    slider ......" auto "footer footer footer footer" auto/1fr minmax(100px, 600px) minmax(200px, 600px) 1fr;
+  grid: "header header header header" auto "...... menu   menu   ......" auto "...... lists  active ......" auto "...... map    slider ......" auto "footer footer footer footer" auto/1fr minmax(100px, 400px) minmax(200px, 1000px) 1fr;
 }
 
 img.title-bg {
@@ -49,17 +50,178 @@ img.title-bg {
   letter-spacing: 2px;
   margin: 0 0 0 0;
   overflow: hidden;
+  padding: 0;
+  margin: 0;
 }
 
-.href-home-icon {
-  position: absolute;
-  border: 0px;
-  padding: 0px;
-  height: 0.75em;
-  width: 0.75em;
+.navMenu-box {
+  position: relative;
+  top: 0;
+  margin-top: -0.25em;
+  padding: 0;
+  height: 0.7em;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.navMenu {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.navMenu a {
+  color: #f6f4e6;
+  text-decoration: none;
+  font-size: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
   display: inline-block;
-  top: 6.1em;
-  right: 0.6em;
+  width: 80px;
+  margin-right: 3.8em;
+  margin-left: 3.8em;
+  margin-top: 2em;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.navMenu .dot {
+  width: 6px;
+  height: 6px;
+  background: #fddb3a;
+  border-radius: 50%;
+  opacity: 0;
+  -webkit-transform: translateX(50%);
+  transform: translateX(50%);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.navMenu a:nth-child(1):hover {
+  color: #fddb3a;
+  opacity: 0.9;
+  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.navMenu a:nth-child(2):hover {
+  color: palevioletred;
+  opacity: 0.9;
+  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.navMenu a:nth-child(3):hover {
+  color: steelblue;
+  opacity: 0.9;
+  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.navMenu a:nth-child(4):hover {
+  color: tomato;
+  opacity: 0.9;
+  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.menu-bg {
+  background: #e8e8f3;
+  height: 0;
+  display: grid;
+  place-content: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.menu {
+  position: fixed;
+  top: 60px;
+  right: 40px;
+  padding: 30px;
+  background: var(--clr-primary);
+  border-radius: 100%;
+  cursor: pointer;
+  box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15), -7px -7px 20px white, inset 0px 0px 4px rgba(255, 255, 255, 0.2), inset 7px 7px 15px rgba(55, 84, 170, 0), inset -7px -7px 20px rgba(255, 255, 255, 0), 0px 0px 4px rgba(255, 255, 255, 0);
+}
+
+.menu::before, .menu::after {
+  content: "";
+  background: #c3c2c7;
+  border-radius: 5px;
+  width: 30px;
+  height: 5px;
+  position: absolute;
+  left: 16px;
+  top: 27px;
+  transition: 0.2s ease;
+  z-index: 1;
+}
+
+.menu::before {
+  transform: rotate(0deg);
+}
+
+.menu::after {
+  transform: rotate(-90deg);
+}
+
+.menu.open {
+  opacity: 0.9;
+}
+
+.menu.open::before {
+  transform: rotate(45deg);
+}
+
+.menu.open::after {
+  transform: rotate(-45deg);
+}
+
+.menu.open .menu-button {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.menu.open .menu-button:first-of-type {
+  bottom: 40px;
+  right: 70px;
+  background: url("../public/icon/home-icon.png") no-repeat 50%/50% var(--clr-primary);
+}
+
+.menu.open .menu-button:nth-of-type(2) {
+  bottom: -40px;
+  right: 70px;
+  background: url("../public/icon/profi.png") no-repeat 50%/50% var(--clr-primary);
+  transition-delay: 0.05s;
+}
+
+.menu.open .menu-button:last-of-type {
+  bottom: -80px;
+  background: url("../public/icon/projects-icon.png") no-repeat 50% 45%/50% 45% var(--clr-primary);
+  transition-delay: 0.1s;
+}
+
+.menu-button {
+  padding: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: #e8e8f3;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: inherit;
+  transition: 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28), 0.2s ease opacity, 0.2s cubic-bezier(0.08, 0.82, 0.17, 1) transform;
+}
+
+.menu-button:hover {
+  transform: scale(1.1);
 }
 
 .href-icon {
@@ -79,10 +241,11 @@ img.title-bg {
 }
 
 .task-list-title {
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .task-list {
+  margin-left: 40px;
   font-size: 1.2rem;
   line-height: 1.7;
   list-style: circle;
@@ -187,7 +350,7 @@ form {
 }
 
 .task-count {
-  margin: -2em -21em 0 0;
+  margin: -2em -25em 0 0;
   font-size: 1rem;
 }
 
@@ -313,13 +476,20 @@ form {
   background-color: var(--clr-light);
   color: var(--clr-dark);
   display: grid;
-  grid: "...... header  header  ......" auto "...... zones1  zones2  ......" auto "...... zones3  zones4  ......" auto "...... map    slider ......" auto "...... footer  footer  ......" auto/1fr minmax(200px, 700px) minmax(200px, 700px) 1fr;
+  grid: "...... header  header  ......" auto "...... zones1  zones2  ......" auto "...... zones3  zones4  ......" auto "...... middle  middle  ......" auto "...... map    slider ......" auto "...... footer  footer  ......" auto/1fr minmax(200px, 700px) minmax(200px, 700px) 1fr;
+}
+
+.header-card {
+  grid-area: header;
+}
+
+.middle-card {
+  grid-area: middle;
 }
 
 .card {
   margin-top: 0rem;
   margin-left: 0;
-  grid-area: header;
 }
 
 .zone-1 {
@@ -344,6 +514,12 @@ form {
 
 .zones-items:hover {
   transform: scale(0.99);
+  opacity: 0.95;
+  transition: transform 600ms ease-in-out;
+}
+
+.zones-items:hover ~ .zone-titles-tag {
+  transform: scale(0.99);
   transition: transform 600ms ease-in-out;
 }
 
@@ -358,17 +534,44 @@ form {
   cursor: pointer;
   display: block;
   object-fit: cover;
+  border-radius: 4px;
+}
+
+.zone-titles {
+  position: absolute;
+  right: 0;
+  width: 22vw;
+  margin-top: 12em;
+  font-family: "Bungee", cursive;
+  text-align: center;
+  background: steelblue;
+  border-radius: 5px;
+  padding: 0px 30px 0px 30px;
+}
+
+.zone-titles-tag {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  margin-top: 0em;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-align: center;
+  background: #d3d4d5;
+  border-radius: 3px;
+  padding: 4px 10px 4px 10px;
+  transform: scaleY(0);
+  transform-origin: top;
+  text-align: left;
 }
 
 .content-box {
-  grid-area: header;
   margin-top: 0rem;
   font-family: "Work Sans", sans-serif;
   font-weight: 300;
   font-size: 1.5rem;
-  background-color: var(--clr-light);
+  background-color: seashell;
   color: var(--clr-dark);
-  padding: 10px;
+  padding: 0px;
 }
 
 .content-box-footer {
@@ -377,15 +580,15 @@ form {
   font-family: "Work Sans", sans-serif;
   font-weight: 300;
   font-size: 1.5rem;
-  background-color: var(--clr-light);
+  background-color: seashell;
   color: var(--clr-dark);
-  padding: 10px;
+  padding: 0px;
 }
 
 .card-title {
   margin-bottom: 1rem;
   position: relative;
-  z-index: 1;
+  z-index: 0;
   margin-left: 5%;
   text-align: center;
   display: inline-block;
@@ -414,8 +617,8 @@ form {
   margin-left: 25%;
   margin-right: 25%;
   position: relative;
-  z-index: 1;
-  color: transparent;
+  z-index: 0;
+  color: seashell;
   transition: color 150ms 350ms;
 }
 
@@ -426,7 +629,7 @@ form {
   bottom: -0.75rem;
   left: -0.75em;
   right: -0.75em;
-  background: white;
+  background: seashell;
   z-index: -1;
   transform: scaleY(0);
   transition: transform 250ms ease-in 250ms;
@@ -471,10 +674,16 @@ form {
   transition-duration: 1s;
 }
 
+.to_top_btn {
+  z-index: 1;
+  cursor: pointer;
+  position: fixed;
+}
+
 .menu-body {
   grid-area: menu;
   margin: 0;
-  height: 45vh;
+  height: 40vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
@@ -694,4 +903,10 @@ form {
 
 .link-three:hover::before {
   transform: translate(0%, 0%) scaleY(1);
+}
+
+.footerpage {
+  grid-area: footer;
+  height: 26vh;
+  top: 0;
 }

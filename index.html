@@ -10,81 +10,16 @@
       href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700,900&display=swap"
     />
     <link rel="stylesheet" href="css/main.css" />
+    <script defer src="js/script.js"></script>
     <!-- Maps -->
 
     <!-- Maps/ -->
     <!-- Slider -->
-    <script>
-      // buttons
-      var sliderControl = document.querySelector(".slider-control");
 
-      // slides informations
-      var slides = document.querySelectorAll(".slide"),
-        slidesLength = slides.length;
-
-      // slides array
-      var slidesArr = [].slice.call(slides);
-
-      // reverse array sorting
-      slidesArr = slidesArr.reverse();
-
-      // slide current
-      var slideCurrent = 0;
-
-      sliderControl.addEventListener("click", function (e) {
-        target = e.target;
-
-        // get next button
-        if (target.classList.contains("next")) {
-          (next = e.target),
-            (prev = next.previousElementSibling),
-            (nextSlide = slidesArr[slideCurrent + 1]),
-            (slide = slidesArr[slideCurrent]);
-
-          slide.classList.add("slide-on");
-          slide.classList.remove("text-on");
-          nextSlide.classList.add("text-on");
-
-          slideCurrent += 1;
-
-          if (slideCurrent > 0) {
-            prev.classList.remove("disabled");
-          }
-
-          if (slideCurrent === slidesLength - 1) {
-            next.classList.add("disabled");
-          }
-        }
-
-        // get prev button
-        if (target.classList.contains("prev")) {
-          slideCurrent -= 1;
-
-          (prev = e.target),
-            (next = prev.nextElementSibling),
-            (prevSlide = slidesArr[slideCurrent + 1]),
-            (slide = slidesArr[slideCurrent]);
-
-          prevSlide.classList.remove("text-on");
-          slide.classList.remove("slide-on");
-          slide.classList.add("text-on");
-
-          if (slideCurrent === slidesLength - 2) {
-            next.classList.remove("disabled");
-          }
-
-          if (slideCurrent === 0) {
-            prev.classList.add("disabled");
-          }
-        }
-      });
-
-      balapaCop("Image Slider", "#999");
-    </script>
     <!-- Slider/ -->
   </head>
   <body>
-    <div class="upper">
+    <div class="upper" style="background-color: seashell">
       <div class="title">
         <img
           class="title-bg"
@@ -104,14 +39,39 @@
           "
           >Here Click!</span
         > -->
-        <span
-          ><a href="#menu" class="href href-home-icon"
-            ><img
-              class="icon-down"
-              src="public/icon/downarrow.png"
-              width="100%"
-              style="position: absolute" /></a
-        ></span>
+        <!-- Menu -->
+        <!-- <div class="menupage" style="bottom: 1em">
+          <iframe
+            src="pages/menu.html"
+            scrolling="no"
+            frameborder="0"
+            height="100%"
+            id="mainFrame"
+            width="100%"
+          ></iframe>
+        </div> -->
+        <div class="navMenu-box" style="background: #272727">
+          <nav class="navMenu" style="font-family: Montserrat, sans-serif">
+            <a href="#home">Home</a>
+            <a href="#profi">Profi</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+            <!-- <div class="dot"></div> -->
+          </nav>
+        </div>
+        
+
+        <div class="menu-bg">
+          <div class="menu" onclick="this.classList.toggle('open')">
+            <a href="#home" class="menu-button"></a>
+            <a href="#profi" class="menu-button"></a>
+            <a href="#projects" class="menu-button"></a>
+          </div>
+        </div>
+
+        <!-- Menu/ -->
+
+
         <span
           class="title"
           style="
@@ -124,7 +84,7 @@
         >
 
         <!-- href-icons -->
-        <a href="#home" class="href href-icon" id="menu"
+        <!-- <a href="#home" class="href href-icon" id="menu"
           ><img
             class="icon"
             src="public/icon/home.png"
@@ -158,12 +118,12 @@
             src="public/icon/maps.png"
             width="100%"
             style="position: absolute"
-        /></a>
+        /></a> -->
         <!-- href-icons/ -->
       </div>
 
       <!-- menu -->
-      <div class="menu-body">
+      <div class="menu-body" id="profi">
         <div class="background-one">
           <div class="link-container">
             <a
@@ -187,19 +147,21 @@
         </div>
       </div>
 
+      <!-- all-tasks -->
       <div class="all-tasks">
-        <h2 class="task-list-title" id="profi">My Profi</h2>
-        <ul class="task-list">
+        <h2 class="task-list-title" >My Profi</h2>
+        <ul class="task-list" data-lists>
           <li class="list-name active-list">Webentwickler</li>
           <li class="list-name">M.Sc. Digitale Technologien</li>
           <li class="list-name">B.Sc. Digitale Technologien</li>
           <li class="list-name">Projekte</li>
         </ul>
 
-        <form action="">
+        <form action="" data-new-list-form>
           <input
             type="text"
             class="new list"
+            data-new-list-input
             placeholder="new profi"
             aria-label="new profi"
           />
@@ -207,48 +169,30 @@
         </form>
       </div>
 
-      <div class="todo-list">
+      <div class="todo-list" data-list-display-container>
         <div class="todo-header">
-          <h2 class="list-title">Webentwickler</h2>
-          <p class="task-count">3 Elements inside</p>
+          <h2 class="list-title" data-list-title>Webentwickler</h2>
+          <p class="task-count" data-list-count>3 Elements inside</p>
 
           <div class="todo-body">
-            <div class="tasks">
-              <div class="task">
+            <div class="tasks" data-tasks>
+              <!-- <div class="task">
                 <input type="checkbox" id="task-1" />
                 <label for="task-1">
                   <span class="custom-checkbox"></span>
                   HTML, CSS/SASS, Javascript
                 </label>
-              </div>
-              <!-- /task-1 -->
-
-              <div class="task">
-                <input type="checkbox" id="task-2" />
-                <label for="task-2">
-                  <span class="custom-checkbox"></span>
-                  Vue.JS, Node.JS, EJS
-                </label>
-              </div>
-              <!-- /task-2 -->
-
-              <div class="task">
-                <input type="checkbox" id="task-3" />
-                <label for="task-3">
-                  <span class="custom-checkbox"></span>
-                  MongoDB, DB2, MySQL
-                </label>
-              </div>
-              <!-- /task-3 -->
+              </div> -->
             </div>
 
             <div class="new-task-creator">
-              <form action="">
+              <form action="" data-new-task-form>
                 <input
                   type="text"
+                  data-new-task-input
                   class="new task"
-                  placeholder="new task name"
-                  aria-label="new task name"
+                  placeholder="new tech"
+                  aria-label="new tech"
                 />
                 <button class="btn create" aria-label="create new task">
                   +
@@ -256,16 +200,22 @@
               </form>
             </div>
             <div class="delete-stuff">
-              <button class="btn delete">Clear selected elements</button>
-              <button class="btn delete">Delete this list</button>
+              <button class="btn delete" data-clear-complete-tasks-button>Clear selected elements</button>
+              <button class="btn delete" data-delete-list-button>Delete this list</button>
             </div>
           </div>
         </div>
+
+ 
+
+
       </div>
+
     </div>
 
-    <div class="lower">
-      <div class="content-box">
+    <!-- lower -->
+    <div class="lower" style="background-color: seashell">
+      <div class="content-box header-card" id="projects">
         <div style="margin-bottom: 1vh" class="content content--card">
           <div class="card">
             <h5
@@ -280,49 +230,108 @@
               Winter's Projects
             </h5>
             <p class="card__body" style="color: seashell">
-              Some of my Projects have be exhibited below. DICOM-Server,
-              Lora-Project and etc.
+              Details of this project.
             </p>
           </div>
         </div>
       </div>
 
       <!-- <div class="zone-1 zones-items"> -->
-      <img
-        class="zone-1 zones-items zoneimg"
-        style="max-width: 100%; overflow: hidden"
-        src="public\img\R6-3.jpg"
-        alt="bg"
-      />
+      <a href="" class="href zone-1 zones-items" style="text-decoration: none"
+        ><div class="zone-1" style="position: relative">
+          <img
+            class="zone-1 zones-items zoneimg"
+            style="max-width: 100%; overflow: hidden"
+            src="public\img\R6-3.jpg"
+            alt="bg"
+          />
+          <span class="zone-titles zones-items">DICOM-Server</span>
+          <p class="zone-titles-tag zones-items" style="color: rgb(14, 14, 14)">
+            Details of this project.
+          </p>
+        </div>
+      </a>
       <!-- </div> -->
       <!-- <div class="zone-2 zones-items"> -->
-      <img
-        class="zone-2 zones-items zoneimg"
-        style="max-width: 100%; overflow: hidden"
-        src="public\img\R6-1.jpg"
-        alt="bg"
-      />
+      <a href="" class="href zone-2 zones-items"
+        ><div class="zone-2" style="position: relative">
+          <img
+            class="zone-2 zones-items zoneimg"
+            style="max-width: 100%; overflow: hidden"
+            src="public\img\R6-1.jpg"
+            alt="bg"
+          />
+          <span class="zone-titles zones-items">Lora-Project</span>
+          <p class="zone-titles-tag zones-items" style="color: rgb(14, 14, 14)">
+            Details of this project.
+          </p>
+        </div>
+      </a>
       <!-- </div> -->
       <!-- <div class="zone-3 zones-items"> -->
-      <img
-        class="zone-3 zones-items zoneimg"
-        style="max-width: 100%; overflow: hidden"
-        src="public\img\3.jpg"
-        alt="bg"
-      />
+      <a href="" class="href zone-3 zones-items" 
+        ><div class="zone-3" style="position: relative">
+          <img
+            class="zone-3 zones-items zoneimg"
+            style="max-width: 100%; overflow: hidden"
+            src="public\img\3.jpg"
+            alt="bg"
+          />
+          <span class="zone-titles zones-items">Face-Detection</span>
+          <p class="zone-titles-tag zones-items" style="color: rgb(14, 14, 14);">
+            Details of this project.
+          </p>
+        </div>
+      </a>
       <!-- </div> -->
-      <img
-        class="zone-4 zones-items zoneimg"
-        style="max-width: 100%; overflow: hidden; background-repeat: repeat-y"
-        src="public\img\2.jpg"
-        alt="bg"
-      />
+      <a href="" class="href zone-4 zones-items"
+        ><div class="zone-4" style="position: relative">
+          <img
+            class="zone-4 zones-items zoneimg"
+            style="
+              max-width: 100%;
+              overflow: hidden;
+              background-repeat: repeat-y;
+            "
+            src="public\img\2.jpg"
+            alt="bg"
+          />
+          <span class="zone-titles zones-items">Film-Editor</span>
+          <p class="zone-titles-tag zones-items" style="color: rgb(14, 14, 14)">
+            Details of this project.
+          </p>
+        </div>
+      </a>
       <!-- <img
         class="zone-5 zones-items"
         style="max-width: 100%; overflow: hidden; object-fit: cover"
         src="public\img\3.jpg"
         alt="bg"
       /> -->
+
+      <!-- middle-card -->
+
+      <div class="content-box middle-card" id="contact">
+        <div style="margin-bottom: 1vh" class="content content--card">
+          <div class="card">
+            <h5
+              class="card-title"
+              style="font-size: 35px; color: rgb(208, 90, 110)"
+            >
+              <img
+                src="public/icon/projects.png"
+                width="5%"
+                style="position: relative; top: 2px"
+              />
+              Winter's Adress and Facebook
+            </h5>
+            <p class="card__body" style="color: seashell">
+              Here you can know where to cantact me.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- middle-card/ -->
 
       <!-- map -->
       <div
@@ -355,30 +364,42 @@
           allowfullscreen="true"
           allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
         ></iframe>
+
+              <!-- To Up -->
+              <div class="to_top_btn"></div>
+
+              <!-- To Up/ -->
       </div>
       <!-- Slider/ -->
+
+
+        <!-- To Up/ -->
     </div>
 
-    <div class="content-box-footer">
-      <div style="margin-bottom: 1vh" class="content content--card">
-        <div class="card">
-          <h5
-            class="card-title"
-            style="font-size: 35px; color: rgb(208, 90, 110)"
-          >
-            <img
-              src="public/icon/projects.png"
-              width="5%"
-              style="position: relative; top: 2px"
-            />
-            Footer
-          </h5>
-          <p class="card__body" style="color: seashell">
-            Some of my Projects have be exhibited below. DICOM-Server,
-            Lora-Project and etc.
-          </p>
-        </div>
+
+      <!-- footerpage -->
+      <div class="footerpage" style="bottom: 1em">
+        <iframe
+          src="pages/footer.html"
+          scrolling="no"
+          frameborder="0"
+          height="100%"
+          id="mainFrame"
+          width="100%"
+        ></iframe>
       </div>
+      <!-- footerpage/ -->
+
     </div>
+
+    <!-- <div class="footerpage"></div> -->
+      <template id="task-template">
+        <div class="task">
+          <input type="checkbox"/>
+          <label>
+            <span class="custom-checkbox"></span>
+          </label>
+        </div>
+      </template>
   </body>
 </html>
