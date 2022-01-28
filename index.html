@@ -18,16 +18,36 @@
 
     <!-- Slider/ -->
   </head>
+
+<script>
+  // function show(){
+  //   document.getElementById("home").style.margin-top = "-50%";
+  //   document.getElementById("change").innerHTML = "BG Display";
+  //   document.getElementById("change").href = "javascript: hide()";
+  // }
+
+  // function hide(){
+  //   document.getElementById("home").style.display = "block";
+  //   document.getElementById("change").innerHTML = "BG Hide";
+  //   document.getElementById("change").href = "javascript: show()";
+  // }
+</script>
+
+
+
   <body>
+    
     <div class="upper" style="background-color: seashell">
-      <div class="title">
+      <div class="title" id="bg">
+        
         <img
           class="title-bg"
           id="home"
-          style="max-width: 100%; overflow: hidden"
+          style="max-width: 100%; overflow: hidden;display: inline-block;"
           src="public\img\1.jpg"
           alt="bg"
         />
+      
         <!-- <span
           class="titel-note"
           style="
@@ -69,6 +89,8 @@
           </div>
         </div>
 
+
+        <!-- <a href="javascript: show()" id="change" class="bg-change"><button>BG Hide</button> </a> -->
         <!-- Menu/ -->
 
 
@@ -80,7 +102,7 @@
             left: 0.2em;
             color: rgb(208, 90, 110);
           "
-          >Winter's Workshop</span
+          >Winter's Workshop </span
         >
 
         <!-- href-icons -->
@@ -223,13 +245,13 @@
               style="font-size: 35px; color: rgb(208, 90, 110)"
             >
               <img
-                src="public/icon/projects.png"
+                src="public/icon/projects-white.png"
                 width="5%"
                 style="position: relative; top: 2px"
               />
               Winter's Projects
             </h5>
-            <p class="card__body" style="color: seashell">
+            <p class="card__body" style="color: rgb(5, 5, 5)">
               Details of this project.
             </p>
           </div>
@@ -319,13 +341,13 @@
               style="font-size: 35px; color: rgb(208, 90, 110)"
             >
               <img
-                src="public/icon/projects.png"
+                src="public/icon/projects-white.png"
                 width="5%"
                 style="position: relative; top: 2px"
               />
               Winter's Adress and Facebook
             </h5>
-            <p class="card__body" style="color: seashell">
+            <p class="card__body" style="color: rgb(5, 5, 5)">
               Here you can know where to cantact me.
             </p>
           </div>
@@ -338,13 +360,14 @@
         class="googlemap"
         id="googlemap"
         onload="initialize()"
-        style="margin-top: 4%"
+        style="margin-top: 0; "
       >
         <!-- <span style="position: relative; left: 0%"><p>Map</p></span> -->
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2426.8050092860503!2d13.273476316007617!3d52.53696204272412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a856b7f70e13d7%3A0xf51422df920e3a76!2sPopitzweg%2C%20Berlin!5e0!3m2!1szh-CN!2sde!4v1643222805043!5m2!1sen!2sde"
           width="100%"
           height="600"
+      
           style="border: 0"
           allowfullscreen=""
           loading="lazy"
@@ -353,7 +376,7 @@
       <!-- map/ -->
 
       <!-- Slider -->
-      <div class="fb-share" style="margin-top: 4%">
+      <div class="fb-share" style="margin-top: 0; ">
         <iframe
           src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fwentao.liu.3766%2Fposts%2F371962029827176%3A1&show_text=true&width=500"
           width="100%"
@@ -402,4 +425,6 @@
         </div>
       </template>
   </body>
+
+
 </html>

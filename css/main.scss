@@ -31,7 +31,7 @@
     "footer footer footer footer" auto/
     // "...... zones1  zones3  ......" auto
     // "...... zones2  zones3  ......" auto/
-    1fr minmax(100px, 400px) minmax(200px, 1000px) 1fr;
+    1fr minmax(100px, 600px) minmax(200px, 1400px) 1fr;
 }
 // title
 img.title-bg {
@@ -65,12 +65,17 @@ img.title-bg {
   margin: 0;
 }
 
+.bg-change {
+  text-decoration: none;
+  margin: 0 auto;
+}
+
 // menu
 //navMenu
 .navMenu-box {
   position: relative;
   top: 0;
-  margin-top: -0.25em;
+  margin-top: -0.68em;
   padding: 0;
   height: 0.7em;
   -webkit-box-sizing: border-box;
@@ -78,6 +83,7 @@ img.title-bg {
   display: flex;
   flex-direction: row;
   align-items: center;
+  transition: transform 500ms ease-in-out;
 }
 
 .navMenu {
@@ -531,7 +537,7 @@ form {
     "...... map    slider ......" auto
     "...... footer  footer  ......" auto
     /
-    1fr minmax(200px, 700px) minmax(200px, 700px) 1fr;
+    1fr minmax(200px, 1000px) minmax(200px, 1000px) 1fr;
 }
 
 .header-card {
@@ -599,7 +605,7 @@ form {
 }
 .zoneimg {
   float: left;
-  height: 410px;
+  height: 600px;
   cursor: pointer;
   display: block;
   object-fit: cover;
@@ -632,16 +638,17 @@ form {
   transform-origin: top;
   text-align: left;
 }
-// .card {
-//   padding: 2rem;
-//   display: block;
-//   height: 1rem;
-//   background-size: cover;
-//   background-color: #444;
-//   background-blend-mode: multiply;
-//   color: white;
-//   text-align: left;
-// }
+.card {
+  padding: 0rem;
+  display: inline;
+  height: 1rem;
+  background-size: cover;
+  background: url("/public/img/background.jpg");
+  background-color: rgb(5, 5, 5);
+  background-blend-mode: multiply;
+
+  text-align: left;
+}
 
 .content-box {
   // grid-area: header;
@@ -649,7 +656,7 @@ form {
   font-family: "Work Sans", sans-serif;
   font-weight: 300;
   font-size: 1.5rem;
-  background-color: seashell;
+  background-color: rgb(5, 5, 5);
   color: var(--clr-dark);
   padding: 0px;
 }
@@ -660,7 +667,7 @@ form {
   font-family: "Work Sans", sans-serif;
   font-weight: 300;
   font-size: 1.5rem;
-  background-color: seashell;
+  background-color: rgb(5, 5, 5);
   color: var(--clr-dark);
   padding: 0px;
 }
@@ -669,7 +676,7 @@ form {
   margin-bottom: 1rem;
   position: relative;
   z-index: 0;
-  margin-left: 5%;
+  margin-left: 0;
   text-align: center;
   display: inline-block;
 }
@@ -699,7 +706,7 @@ form {
   margin-right: 25%;
   position: relative;
   z-index: 0;
-  color: seashell;
+  color: rgb(5, 5, 5);
 
   transition: color 150ms 350ms;
 }
@@ -711,7 +718,7 @@ form {
   bottom: -0.75rem;
   left: -0.75em;
   right: -0.75em;
-  background: seashell;
+  background: rgb(5, 5, 5);
   z-index: -1;
   transform: scaleY(0);
   transition: transform 250ms ease-in 250ms;
