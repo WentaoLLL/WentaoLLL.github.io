@@ -27,12 +27,8 @@
     "header header header header" auto
     "...... menu   menu   ......" auto
     "...... lists  active ......" auto
-    "...... projects  projects  ......" auto
-    "...... map    slider ......" auto
     "footer footer footer footer" auto/
-    // "...... zones1  zones3  ......" auto
-    // "...... zones2  zones3  ......" auto/
-    1fr minmax(100px, 600px) minmax(200px, 1400px) 1fr;
+    1fr minmax(200px, 600px) minmax(200px, 1400px) 1fr;
 }
 // title
 img.title-bg {
@@ -294,14 +290,6 @@ img.title-bg {
 }
 // menu/
 
-// photo-slider
-.photo-slider {
-  grid-area: photo;
-  margin: 0 0 0 0;
-  height: 60vh;
-}
-// photo-slider/
-
 .href-icon {
   position: relative;
   border: 0px;
@@ -554,31 +542,6 @@ form {
   grid-area: slider;
 }
 // Zone1-5
-.lower {
-  margin-top: 0rem;
-  font-family: "Work Sans", sans-serif;
-  font-weight: 300;
-  font-size: 1.5rem;
-  background-color: var(--clr-light);
-  color: var(--clr-dark);
-  // padding: 10px;
-
-  display: grid;
-  grid:
-    // "...... header header ......" auto
-    // "...... lists  active ......" auto
-    // "footer footer footer footer" auto/
-
-    "...... header  header  ......" auto
-    "...... photo   photo   ......" auto
-    "...... zones1  zones2  ......" auto
-    "...... zones3  zones4  ......" auto
-    "...... middle  middle  ......" auto
-    "...... map    slider ......" auto
-    "...... footer  footer  ......" auto
-    /
-    1fr minmax(200px, 1000px) minmax(200px, 1000px) 1fr;
-}
 
 .header-card {
   grid-area: header;
@@ -587,7 +550,7 @@ form {
 .project-slider {
   grid-area: projects;
   margin: 0 0 0 0;
-  height: 100vh;
+  height: 80vh;
 }
 
 .middle-card {

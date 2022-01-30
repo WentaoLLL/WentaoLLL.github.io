@@ -21,7 +21,7 @@
   background-color: var(--clr-light);
   color: var(--clr-dark);
   display: grid;
-  grid: "header header header header" auto "...... menu   menu   ......" auto "...... lists  active ......" auto "...... map    slider ......" auto "footer footer footer footer" auto/1fr minmax(100px, 600px) minmax(200px, 1400px) 1fr;
+  grid: "header header header header" auto "...... menu   menu   ......" auto "...... lists  active ......" auto "...... projects  projects  ......" auto "...... map    slider ......" auto "footer footer footer footer" auto/1fr minmax(100px, 600px) minmax(200px, 1400px) 1fr;
 }
 
 img.title-bg {
@@ -59,10 +59,16 @@ img.title-bg {
   margin: 0 auto;
 }
 
+.button-home {
+  position: relative;
+  right: 0em;
+  z-index: 10;
+}
+
 .navMenu-box {
   position: relative;
   top: 0;
-  margin-top: -0.68em;
+  margin-top: 0em;
   padding: 0;
   height: 0.7em;
   -webkit-box-sizing: border-box;
@@ -89,8 +95,8 @@ img.title-bg {
   font-weight: 500;
   display: inline-block;
   width: 80px;
-  margin-right: 3.8em;
-  margin-left: 3.8em;
+  margin-right: 2.8em;
+  margin-left: 2.8em;
   margin-top: 2em;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -136,6 +142,13 @@ img.title-bg {
   transition: all 0.2s ease-in-out;
 }
 
+.navMenu a:nth-child(5):hover {
+  color: #23edb7;
+  opacity: 0.9;
+  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
+}
+
 .menu-bg {
   background: #e8e8f3;
   height: 0;
@@ -146,11 +159,12 @@ img.title-bg {
 
 .menu {
   position: fixed;
-  top: 60px;
+  top: 50px;
   right: 40px;
   padding: 30px;
-  background: var(--clr-primary);
+  background: #7b7494;
   border-radius: 100%;
+  z-index: 5;
   cursor: pointer;
   box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15), -7px -7px 20px white, inset 0px 0px 4px rgba(255, 255, 255, 0.2), inset 7px 7px 15px rgba(55, 84, 170, 0), inset -7px -7px 20px rgba(255, 255, 255, 0), 0px 0px 4px rgba(255, 255, 255, 0);
 }
@@ -165,7 +179,7 @@ img.title-bg {
   left: 16px;
   top: 27px;
   transition: 0.2s ease;
-  z-index: 1;
+  z-index: 5;
 }
 
 .menu::before {
@@ -194,21 +208,31 @@ img.title-bg {
 }
 
 .menu.open .menu-button:first-of-type {
-  bottom: 40px;
-  right: 70px;
-  background: url("../public/icon/home-icon.png") no-repeat 50%/50% var(--clr-primary);
+  bottom: -80px;
+  background: url("../public/icon/home-icon.png") no-repeat 50%/50% #7b7494;
 }
 
 .menu.open .menu-button:nth-of-type(2) {
-  bottom: -40px;
-  right: 70px;
-  background: url("../public/icon/profi.png") no-repeat 50%/50% var(--clr-primary);
+  bottom: -160px;
+  background: url("../public/icon/profi.png") no-repeat 50%/50% #7b7494;
   transition-delay: 0.05s;
 }
 
-.menu.open .menu-button:last-of-type {
-  bottom: -80px;
-  background: url("../public/icon/projects-icon.png") no-repeat 50% 45%/50% 45% var(--clr-primary);
+.menu.open .menu-button:nth-of-type(3) {
+  bottom: -240px;
+  background: url("../public/icon/photo.png") no-repeat 50%/50% #7b7494;
+  transition-delay: 0.05s;
+}
+
+.menu.open .menu-button:nth-of-type(4) {
+  bottom: -320px;
+  background: url("../public/icon/projects-icon.png") no-repeat 50% 45%/50% 45% #7b7494;
+  transition-delay: 0.1s;
+}
+
+.menu.open .menu-button:nth-of-type(5) {
+  bottom: -400px;
+  background: url("../public/icon/contact-icon.png") no-repeat 50% 45%/50% 45% #7b7494;
   transition-delay: 0.1s;
 }
 
@@ -228,6 +252,12 @@ img.title-bg {
 
 .menu-button:hover {
   transform: scale(1.1);
+}
+
+.photo-slider {
+  grid-area: photo;
+  margin: 0 0 0 0;
+  height: 60vh;
 }
 
 .href-icon {
@@ -451,8 +481,8 @@ form {
   position: absolute;
   width: 100%;
   left: 1em;
-  bottom: -55px;
-  color: #9f353a;
+  bottom: -10px;
+  color: #c6e6e9;
 }
 
 .btn.delete {
@@ -482,11 +512,17 @@ form {
   background-color: var(--clr-light);
   color: var(--clr-dark);
   display: grid;
-  grid: "...... header  header  ......" auto "...... zones1  zones2  ......" auto "...... zones3  zones4  ......" auto "...... middle  middle  ......" auto "...... map    slider ......" auto "...... footer  footer  ......" auto/1fr minmax(200px, 1000px) minmax(200px, 1000px) 1fr;
+  grid: "...... header  header  ......" auto "...... photo   photo   ......" auto "...... zones1  zones2  ......" auto "...... zones3  zones4  ......" auto "...... middle  middle  ......" auto "...... map    slider ......" auto "...... footer  footer  ......" auto/1fr minmax(200px, 1000px) minmax(200px, 1000px) 1fr;
 }
 
 .header-card {
   grid-area: header;
+}
+
+.project-slider {
+  grid-area: projects;
+  margin: 0 0 0 0;
+  height: 100vh;
 }
 
 .middle-card {

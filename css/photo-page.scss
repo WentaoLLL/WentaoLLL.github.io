@@ -26,13 +26,13 @@
   grid:
     "header header header header" auto
     "...... menu   menu   ......" auto
-    "...... lists  active ......" auto
-    "...... projects  projects  ......" auto
-    "...... map    slider ......" auto
+    "...... photo  photo  ......" auto
+    "...... zones1  zones2  ......" auto
+    "...... zones3  zones4  ......" auto
     "footer footer footer footer" auto/
     // "...... zones1  zones3  ......" auto
     // "...... zones2  zones3  ......" auto/
-    1fr minmax(100px, 600px) minmax(200px, 1400px) 1fr;
+    1fr minmax(200px, 1000px) minmax(200px, 1000px) 1fr;
 }
 // title
 img.title-bg {
@@ -204,7 +204,7 @@ img.title-bg {
   top: 50px;
   right: 40px;
   padding: 30px;
-  background: #7b7494;
+  background: #f27b9b;
   border-radius: 100%;
   z-index: 5;
   cursor: pointer;
@@ -217,7 +217,7 @@ img.title-bg {
   &::before,
   &::after {
     content: "";
-    background: #c3c2c7;
+    background: #7b7494;
     border-radius: 5px;
     width: 30px;
     height: 5px;
@@ -587,7 +587,7 @@ form {
 .project-slider {
   grid-area: projects;
   margin: 0 0 0 0;
-  height: 100vh;
+  height: 80vh;
 }
 
 .middle-card {
