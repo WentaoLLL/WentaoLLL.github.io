@@ -87,7 +87,7 @@ img.title-bg {
   top: 0;
   margin-top: 0em;
   padding: 0;
-  height: 0.7em;
+  height: 0.3em;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: flex;
@@ -98,7 +98,7 @@ img.title-bg {
 
 .navMenu {
   position: relative;
-  top: 50%;
+  top: 100%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -107,7 +107,7 @@ img.title-bg {
 .navMenu a {
   color: #f6f4e6;
   text-decoration: none;
-  font-size: 0.2em;
+  font-size: 0.1em;
   text-transform: uppercase;
   font-weight: 500;
   display: inline-block;
@@ -554,31 +554,6 @@ form {
   grid-area: slider;
 }
 // Zone1-5
-.lower {
-  margin-top: 0rem;
-  font-family: "Work Sans", sans-serif;
-  font-weight: 300;
-  font-size: 1.5rem;
-  background-color: var(--clr-light);
-  color: var(--clr-dark);
-  // padding: 10px;
-
-  display: grid;
-  grid:
-    // "...... header header ......" auto
-    // "...... lists  active ......" auto
-    // "footer footer footer footer" auto/
-
-    "...... header  header  ......" auto
-    "...... photo   photo   ......" auto
-    "...... zones1  zones2  ......" auto
-    "...... zones3  zones4  ......" auto
-    "...... middle  middle  ......" auto
-    "...... map    slider ......" auto
-    "...... footer  footer  ......" auto
-    /
-    1fr minmax(200px, 1000px) minmax(200px, 1000px) 1fr;
-}
 
 .header-card {
   grid-area: header;

@@ -17,18 +17,11 @@
     <div class="upper" style="background-color: seashell">
       <div class="title" id="bg">
 
-        <div class="header-pic" style="height: 40vh;">
-          <iframe
-            src="../pages/header.html"
-            scrolling="no"
-            frameborder="0"
-            height="100%"
-            id="mainFrame"
-            width="100%"
-          ></iframe>
+        <div class="header-pic" style="height: 20vh;">
+          <object data="../pages/header.html" height="100%" width="100%"></object>
         </div>
 
-        <div class="navMenu-box" style="background: #272727">
+        <div class="navMenu-box" style="background: #272727; top: -0.2em;">
           <nav class="navMenu" style="font-family: Montserrat, sans-serif">
             <a href="../index.html">Home</a>
             <a href="profi.html">Profi</a>
@@ -54,7 +47,7 @@
 
 
       <!-- Project-Slider -->
-      <div class="project-slider">
+      <div class="project-slider" style="overflow: hidden;">
         <iframe
           src="../pages/project-slider.html"
           scrolling="no"
@@ -70,8 +63,8 @@
 
 
       <!-- footerpage -->
-      <div class="footerpage" style="bottom: 1em">
-        <iframe
+      <div class="footerpage" style="bottom: 0em">
+        <!-- <iframe
           src="../pages/footer.html"
           scrolling="no"
           frameborder="0"
@@ -79,7 +72,8 @@
           id="mainFrame"
           width="100%"
           allowfullscreen="true"
-        ></iframe>
+        ></iframe> -->
+        <object data="../pages/footer.html" height="100%" width="100%"></object>
       </div>
       <!-- footerpage/ -->
     </div>
