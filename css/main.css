@@ -21,7 +21,7 @@
   background-color: var(--clr-light);
   color: var(--clr-dark);
   display: grid;
-  grid: "header header header header" auto "...... menu   menu   ......" auto "...... lists  active ......" auto "...... projects  projects  ......" auto "...... map    slider ......" auto "footer footer footer footer" auto/1fr minmax(100px, 600px) minmax(200px, 1400px) 1fr;
+  grid: "header header header header" auto "...... menu   menu   ......" auto "...... lists  active ......" auto "...... projects  projects  ......" auto "...... map    slider ......" auto "footer footer footer footer" auto/1fr minmax(200px, 600px) minmax(200px, 1400px) 1fr;
 }
 
 img.title-bg {
@@ -42,6 +42,9 @@ img.title-bg {
 }
 
 .title {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
   grid-area: header;
   text-align: center;
   font-size: calc(7vw);
@@ -49,7 +52,7 @@ img.title-bg {
   color: rgba(0, 0, 0, 0.1);
   letter-spacing: 2px;
   margin: 0 0 0 0;
-  overflow: hidden;
+  overflow: visible;
   padding: 0;
   margin: 0;
 }
@@ -949,6 +952,6 @@ form {
 
 .footerpage {
   grid-area: footer;
-  height: 26vh;
-  top: 0;
+  height: 24vh;
+  bottom: 0;
 }

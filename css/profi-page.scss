@@ -79,11 +79,19 @@ img.title-bg {
 // menu
 //navMenu
 .navMenu-box {
-  position: relative;
+  grid-area: menu;
+  position: -webkit-sticky;
+  position: sticky;
   top: 0;
-  margin-top: 0em;
-  padding: 0;
-  height: 0.3em;
+  z-index: 1;
+}
+
+.navMenu-box {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 50px;
+  text-align: center;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: flex;
@@ -94,7 +102,8 @@ img.title-bg {
 
 .navMenu {
   position: relative;
-  top: 100%;
+  // margin-top: 0.1em;
+  top: 25%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -103,7 +112,7 @@ img.title-bg {
 .navMenu a {
   color: #f6f4e6;
   text-decoration: none;
-  font-size: 0.1em;
+  font-size: 0.6em;
   text-transform: uppercase;
   font-weight: 500;
   display: inline-block;
