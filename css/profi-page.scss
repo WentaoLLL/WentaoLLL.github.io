@@ -14,6 +14,36 @@
   box-sizing: border-box;
 }
 
+@keyframes slidein {
+  from {
+    transform: translateX(-100vw);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* scrolling style */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: #bbb;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.25);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(0, 255, 0, 0.4);
+}
+
 .upper {
   margin: 0;
   font-family: "Work Sans", sans-serif;
@@ -21,11 +51,12 @@
   font-size: 1.5rem;
   background-color: var(--clr-light);
   color: var(--clr-dark);
-
+  animation: slidein 1.2s ease-in-out;
   display: grid;
   grid:
     "header header header header" auto
-    "...... menu   menu   ......" auto
+    "menu menu   menu   menu" auto
+    "......  profi  profi ......" auto
     "...... lists  active ......" auto
     "footer footer footer footer" auto/
     1fr minmax(200px, 600px) minmax(200px, 1400px) 1fr;
@@ -299,6 +330,14 @@ img.title-bg {
 }
 // menu/
 
+// profi-resume
+.profi-resume {
+  grid-area: profi;
+  // margin-top: 100px;
+  // margin-bottom: 100px;
+  height: 650%;
+}
+
 .href-icon {
   position: relative;
   border: 0px;
@@ -315,6 +354,7 @@ img.title-bg {
 .all-tasks {
   background: rgb(248, 195, 205);
   grid-area: lists;
+  margin-top: 870px;
 }
 
 .task-list-title {
@@ -410,7 +450,7 @@ form {
 // todo-list
 .todo-list {
   --spacer: 2rem;
-
+  margin-top: 870px;
   grid-area: active;
   background: var(--clr-light);
   color: var(--clr-light);

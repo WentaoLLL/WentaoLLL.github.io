@@ -11,6 +11,7 @@
     />
     <link rel="stylesheet" href="css/main.css" />
     <script defer src="js/script.js"></script>
+    <link rel="preload" as="image" href="public/img/index.jpg" />
 
     <!-- Maps -->
 
@@ -28,7 +29,9 @@
           id="home"
           style="max-width: 100%; overflow: hidden; display: inline-block"
           src="public/img/index.jpg"
+          srcset="public/img/index-small.jpg 400w, public/img/index.jpg 1600w"
           alt="bg"
+          importance="high"
         />
 
         <div
@@ -51,6 +54,7 @@
                 height="100%"
                 id="mainFrame"
                 width="100%"
+                loading="lazy"
               ></iframe>
             </div>
           </a>

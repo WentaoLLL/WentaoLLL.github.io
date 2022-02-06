@@ -2,12 +2,12 @@
 @import url("https://fonts.googleapis.com/css?family=Oswald");
 .site {
   display: grid;
-  grid-template-rows: 6fr 3fr;
+  grid-template-rows: 5fr 3fr;
   grid-template-columns: 5rem 1fr 1fr 5rem;
   box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
   width: 100%;
   height: 100%;
-  background-color: seashell;
+  background-color: white;
   font-family: "Josefin Sans", sans-serif;
 }
 
@@ -17,7 +17,7 @@
 
 .site {
   --total: 4;
-  --percentage: calc(var(--scene) / var(--total));
+  --percentage: calc(var(--scene)/var(--total));
 }
 
 input[value="1"]:checked ~ .site {
@@ -112,7 +112,7 @@ input[value="4"]:checked ~ * [data-scene="4"] + [data-scene] {
 }
 
 .page-numbers {
-  color: seashell;
+  color: white;
   overflow: hidden;
 }
 
@@ -137,7 +137,7 @@ input[value="4"]:checked ~ * [data-scene="4"] + [data-scene] {
   position: absolute;
   top: 0;
   left: 0.5em;
-  transform: translateY(calc((-100% * (var(--percentage) - 1 / var(--total)))));
+  transform: translateY(calc((-100% * (var(--percentage) - 1 /var(--total)))));
 }
 
 .left-content {
@@ -197,7 +197,7 @@ input[value="4"]:checked ~ * [data-scene="4"] + [data-scene] {
 }
 
 .hero {
-  color: seashell;
+  color: white;
   grid-row: 1 / 2;
   grid-column: 3 / -1;
 }
@@ -219,5 +219,5 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: seashell;
+  background-color: #ccc;
 }
