@@ -52,7 +52,7 @@
   color: var(--clr-dark);
   animation: slidein 1.2s ease-in-out;
   display: grid;
-  grid: "header header header header" auto "menu menu   menu   menu" auto "......  profi  profi ......" auto "...... lists  active ......" auto "footer footer footer footer" auto/1fr minmax(200px, 600px) minmax(200px, 1400px) 1fr;
+  grid: "header header header header" auto "menu menu   menu   menu" auto "resume  resume  resume resume" auto "...... lists  active ......" auto "footer footer footer footer" auto/1fr minmax(200px, 350px) minmax(200px, 1650px) 1fr;
 }
 
 img.title-bg {
@@ -294,8 +294,8 @@ img.title-bg {
 }
 
 .profi-resume {
-  grid-area: profi;
-  height: 650%;
+  grid-area: resume;
+  height: 1850%;
 }
 
 .href-icon {
@@ -312,7 +312,8 @@ img.title-bg {
 .all-tasks {
   background: #f8c3cd;
   grid-area: lists;
-  margin-top: 870px;
+  margin-top: 2740px;
+  position: relative;
 }
 
 .task-list-title {
@@ -406,7 +407,7 @@ form {
 
 .todo-list {
   --spacer: 2rem;
-  margin-top: 870px;
+  margin-top: 2740px;
   grid-area: active;
   background: var(--clr-light);
   color: var(--clr-light);
@@ -764,6 +765,7 @@ form {
 
 .menu-body {
   grid-area: menu;
+  position: relative;
   margin: 0;
   height: 40vh;
   display: grid;

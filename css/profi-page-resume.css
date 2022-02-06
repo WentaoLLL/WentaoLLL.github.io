@@ -76,13 +76,13 @@ h1 {
 
 .name-hero {
   background: rgba(0, 0, 0, 0.001);
-  bottom: 0;
+  top: 10%;
   height: 290px;
   left: 0;
   margin: auto;
   position: absolute;
   right: 0;
-  top: 0;
+  /* top: 0; */
   width: 85%;
 }
 
