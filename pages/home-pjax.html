@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebApp</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700,900&display=swap"
+    />
+    <link rel="stylesheet" href="../css/home.css" />
+    <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="../js/jquery.pjax.js"></script>
+    <link rel="preload" as="script" href="../pages/header.html" />
+    <link rel="preload" as="image" href="../public/img/home-4.jpg" />
+    <link rel="preload" as="image" href="../public/img/home-5.jpg" />
+    <link rel="preload" as="image" href="../public/img/home-6.jpg" />
+    <script type="text/javascript">
+      $("#pjax-content").load(location.href + " #pjax-content");
+    </script>
+  </head>
+
+  <body>
+    <div class="upper" style="background-color: rgb(255, 255, 255)">
+      <div class="title" id="bg">
+        <div class="header-pic" style="height: 20vh">
+          <object
+            data="../pages/header.html"
+            height="100%"
+            width="100%"
+          ></object>
+        </div>
+
+        <!-- menu-button -->
+        <div class="menu-bg">
+          <div class="menu" onclick="this.classList.toggle('open')">
+            <a href="home.html" class="menu-button"></a>
+            <a href="profi.html" class="menu-button"></a>
+            <a href="photo.html" class="menu-button"></a>
+            <a href="projects.html" class="menu-button"></a>
+            <a href="contact.html" class="menu-button"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="navMenu-box" style="background: #272727">
+        <nav
+          class="navMenu"
+          id="navMenu"
+          style="font-family: Montserrat, sans-serif"
+        >
+          <a href="home.html" id="home">Home</a>
+          <a href="" id="profi">Profi</a>
+          <a href="projects.html" id="projects">Projects</a>
+          <a href="photo.html" id="photo">Photo</a>
+          <a href="contact.html" id="contact">Contact</a>
+          <!-- <div class="dot"></div> -->
+        </nav>
+      </div>
+    </div>
+
+    <div
+      class="content"
+      id="pjax-content"
+      style="background-color: rgb(255, 255, 255)"
+    >
+      <!-- <div class="dot"></div> -->
+    </div>
+  </body>
+</html>

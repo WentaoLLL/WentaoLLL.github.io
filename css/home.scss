@@ -35,7 +35,41 @@
   background: rgba(0, 255, 0, 0.4);
 }
 
+@keyframes slidein {
+  from {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 .upper {
+  margin: 0;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  background-color: var(--clr-light);
+  color: var(--clr-dark);
+
+  display: grid;
+  grid:
+    "header header header header" auto
+    // "menu menu   menu   menu" auto
+    "content content   content   content" auto/
+    // "projects projects  projects  projects" auto
+    // "timer  timer   timer  timer"
+    // "pic pic    pic pic" auto
+    // "pic2 pic2    pic2 pic2" auto
+    // "pic3 pic3    pic3 pic3" auto
+    // "footer footer footer footer" auto/
+    // "...... zones1  zones3  ......" auto
+    // "...... zones2  zones3  ......" auto/
+    1fr minmax(200px, 700px) minmax(200px, 700px) 1fr;
+}
+
+.content {
+  grid-area: content;
   margin: 0;
   font-family: "Work Sans", sans-serif;
   font-weight: 300;
@@ -45,8 +79,6 @@
   animation: slidein 1.2s ease-in-out;
   display: grid;
   grid:
-    "header header header header" auto
-    "menu menu   menu   menu" auto
     "projects projects  projects  projects" auto
     "timer  timer   timer  timer"
     "pic pic    pic pic" auto
@@ -91,9 +123,19 @@ img.title-bg {
   z-index: 1;
 }
 
+.navMenu ul li {
+  width: 20%;
+  text-align: center;
+  float: left;
+
+  list-style-type: none;
+  display: inline;
+}
+
 .timer {
   grid-area: timer;
   margin-top: -80px;
+  height: 130px;
 }
 
 @keyframes slidein {
@@ -109,7 +151,7 @@ img.title-bg {
   grid-area: pic;
   display: flex;
   align-items: center;
-  margin-top: 200px;
+  margin-top: 150px;
 }
 
 .pic-bg {
@@ -192,17 +234,17 @@ img.title-bg {
 // menu
 //navMenu
 .navMenu-box {
-  grid-area: menu;
+  // grid-area: menu;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 5;
 }
 
 .navMenu-box {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
+  // position: -webkit-sticky;
+  // position: sticky;
+  // top: 0;
   height: auto;
   text-align: center;
   -webkit-box-sizing: border-box;

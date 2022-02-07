@@ -16,7 +16,7 @@
 
 @keyframes slidein {
   from {
-    transform: translateY(100vw);
+    transform: translateX(100vw);
   }
   to {
     transform: translateY(0);
@@ -51,16 +51,31 @@
   font-size: 1.5rem;
   background-color: var(--clr-light);
   color: var(--clr-dark);
-  animation: slidein 1.2s ease-in-out;
+  // animation: slidein 1.2s ease-in-out;
   display: grid;
   grid:
-    "header header header header" auto
-    "...... menu   menu   ......" auto
-    "...... projects  projects  ......" auto
-    "footer footer footer footer" auto/
+    // "header header header header" auto
+    // "...... menu   menu   ......" auto/
+    // "...... projects  projects  ......" auto
+    // "footer footer footer footer" auto/
     // "...... zones1  zones3  ......" auto
     // "...... zones2  zones3  ......" auto/
     1fr minmax(100px, 600px) minmax(200px, 1400px) 1fr;
+}
+
+.content {
+  margin: 0;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  background-color: var(--clr-light);
+  color: var(--clr-dark);
+  animation: slidein 1.2s ease-in-out;
+  display: grid;
+  grid:
+    "...... projects  projects  ......" auto
+    "footer footer footer footer" auto/
+    1fr minmax(200px, 350px) minmax(200px, 1650px) 1fr;
 }
 // title
 img.title-bg {
@@ -111,18 +126,18 @@ img.title-bg {
 // menu
 //navMenu
 .navMenu-box {
-  grid-area: menu;
-  position: -webkit-sticky;
-  position: sticky;
+  // grid-area: menu;
+  // position: -webkit-sticky;
+  position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 5;
 }
 
 .navMenu-box {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  height: 50px;
+  height: auto;
   text-align: center;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
