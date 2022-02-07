@@ -210,7 +210,7 @@ img.title-bg {
   top: 50px;
   right: 40px;
   padding: 30px;
-  background: #f27b9b;
+  background: #7b7494;
   border-radius: 100%;
   z-index: 5;
   cursor: pointer;
@@ -219,7 +219,7 @@ img.title-bg {
 
 .menu::before, .menu::after {
   content: "";
-  background: #7b7494;
+  background: #c3c2c7;
   border-radius: 5px;
   width: 30px;
   height: 5px;

@@ -357,17 +357,16 @@ img.title-bg {
   display: grid;
   place-content: center;
   -webkit-tap-highlight-color: transparent;
-  z-index: 5;
 }
 
 .menu {
   position: fixed;
-  bottom: 50px;
+  top: 50px;
   right: 40px;
   padding: 30px;
   background: #7b7494;
   border-radius: 100%;
-
+  z-index: 5;
   cursor: pointer;
   box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
     -7px -7px 20px rgba(255, 255, 255, 1),
@@ -406,28 +405,28 @@ img.title-bg {
       opacity: 1;
       pointer-events: auto;
       &:first-of-type {
-        bottom: 80px;
+        bottom: -80px;
         background: url("../public/icon/home-icon.png") no-repeat 50%/50%
           #7b7494;
       }
       &:nth-of-type(2) {
-        bottom: 160px;
+        bottom: -160px;
         background: url("../public/icon/profi.png") no-repeat 50%/ 50% #7b7494;
         transition-delay: 0.05s;
       }
       &:nth-of-type(3) {
-        bottom: 240px;
+        bottom: -240px;
         background: url("../public/icon/photo.png") no-repeat 50%/ 50% #7b7494;
         transition-delay: 0.05s;
       }
       &:nth-of-type(4) {
-        bottom: 320px;
+        bottom: -320px;
         background: url("../public/icon/projects-icon.png") no-repeat 50% 45%/50%
           45% #7b7494;
         transition-delay: 0.1s;
       }
       &:nth-of-type(5) {
-        bottom: 400px;
+        bottom: -400px;
         background: url("../public/icon/contact-icon.png") no-repeat 50% 45%/50%
           45% #7b7494;
         transition-delay: 0.1s;
