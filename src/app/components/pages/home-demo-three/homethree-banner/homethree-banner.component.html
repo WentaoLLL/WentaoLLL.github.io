@@ -1,0 +1,119 @@
+<div class="banner-wrapper-area">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12">
+                <div class="banner-wrapper-content">
+                    <h1>Here is Wentao</h1>
+                    <p>
+                        You can also call me Winter. I am a programmer dedicated
+                        to web development. Both front-end and back-end
+                        programming are my main learning direction.
+                    </p>
+                    <div class="btn-box d-flex align-items-center">
+                        <a routerLink="/contact" class="default-btn"
+                            ><span>Contact Me Now</span></a
+                        >
+                        <a routerLink="/about" class="link-btn"
+                            >Know More About Me
+                            <i class="lni lni-chevron-right"></i
+                        ></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="banner-wrapper-video">
+                    <button
+                        class="video-btn popup-youtube"
+                        (click)="
+                            ngxSmartModalService.getModal('popupOne').open()
+                        "
+                    >
+                        <i class="lni lni-play"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="banner-boxes-area">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-features-box">
+                        <div class="icon">
+                            <img
+                                src="assets/img/services/services-icon7.png"
+                                alt="services-icon"
+                            />
+                        </div>
+                        <h3>
+                            <a routerLink="/news-details">Schools</a>
+                        </h3>
+                        <p>
+                            China is where I was born and where I grew up. I
+                            spent my childhood there and received primary and
+                            secondary education in Hefei, the capital city of
+                            Anhui Province.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-features-box">
+                        <div class="icon">
+                            <img
+                                src="assets/img/services/services-icon8.png"
+                                alt="services-icon"
+                            />
+                        </div>
+                        <h3>
+                            <a routerLink="/news-details">Bachelor Degree</a>
+                        </h3>
+                        <p>
+                            After taking the Chinese college entrance
+                            examination, I entered Jiangnan University in Wuxi.
+                            I did my bachelor's degree here with a focus on
+                            digital media technology.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-features-box">
+                        <div class="icon">
+                            <img
+                                src="assets/img/services/services-icon9.png"
+                                alt="services-icon"
+                            />
+                        </div>
+                        <h3>
+                            <a routerLink="/news-details">Master Degree</a>
+                        </h3>
+                        <p>
+                            After graduating from my undergraduate degree I was
+                            given the opportunity to fly to Germany. I got a
+                            master's degree at Anhalt University of Applied
+                            Sciences.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="shape1">
+        <img src="assets/img/shape/shape1.png" alt="shape" />
+    </div>
+    <div class="shape3">
+        <img src="assets/img/shape/shape3.png" alt="shape" />
+    </div>
+    <div class="shape4">
+        <img src="assets/img/shape/shape4.png" alt="shape" />
+    </div>
+    <div class="shape5">
+        <img src="assets/img/shape/shape5.png" alt="shape" />
+    </div> -->
+</div>
+<div class="video-popup">
+    <ngx-smart-modal #popupOne [identifier]="'popupOne'">
+        <iframe
+            src="https://www.youtube.com/embed/PWasdasd"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+        ></iframe>
+    </ngx-smart-modal>
+</div>

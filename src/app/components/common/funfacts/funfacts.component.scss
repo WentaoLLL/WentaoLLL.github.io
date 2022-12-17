@@ -1,0 +1,101 @@
+.single-funfacts-box {
+    margin-bottom: 25px;
+    position: relative;
+    padding-left: 105px;
+
+    .icon {
+        left: 0;
+        top: 50%;
+        position: absolute;
+        transform: translateY(-50%);
+    }
+    h3 {
+        line-height: 1;
+        font-size: 55px;
+        margin-bottom: 0;
+        color: var(--primaryColor);
+    }
+    .sign {
+        position: relative;
+        top: 2px;
+    }
+    p {
+        font: {
+            size: 15px;
+            weight: 500;
+            family: var(--headingFontFamily);
+        };
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+    
+    .single-funfacts-box {
+        padding-left: 0;
+
+        h3 {
+            font-size: 35px;
+            margin-bottom: 4px;
+        }
+        p {
+            font-size: 14px;
+        }
+        .icon {
+            left: 0;
+            top: unset;
+            transform: unset;
+            position: relative;
+            margin-bottom: 20px;
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .single-funfacts-box {
+        padding-left: 0;
+
+        .icon {
+            margin-bottom: 20px;
+            position: relative;
+            transform: unset;
+            top: 0;
+        }
+        h3 {
+            font-size: 40px;
+            margin-bottom: 3px;
+        }
+        p {
+            font-size: 14px;
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .single-funfacts-box {
+        padding-left: 0;
+
+        .icon {
+            top: 0;
+            position: relative;
+            margin-bottom: 20px;
+            transform: translateY(0);
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1550px */
+@media only screen and (min-width: 1550px) {}

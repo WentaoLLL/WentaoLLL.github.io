@@ -1,0 +1,125 @@
+.web-security-area {
+  z-index: 1;
+  position: relative;
+  background-color: var(--blackColor);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.web-security-area.bg-image1 {
+  background-image: url(../../../../assets/img/web-bg3.jpg);
+}
+
+.web-security-area.bg-image2 {
+  background-image: url(../../../../assets/img/web-bg4.jpg);
+}
+
+.web-security-area::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  z-index: -1;
+  opacity: 0.2;
+  position: absolute;
+  background-color: #000000;
+}
+
+.web-security-content {
+  z-index: 1;
+  padding: 90px;
+  max-width: 645px;
+  margin-left: auto;
+  border-radius: 7px;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.web-security-content h2 {
+  margin-bottom: 12px;
+  font-size: 36px;
+}
+
+.web-security-content .features-list {
+  padding-left: 0;
+  list-style-type: none;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.web-security-content .features-list li {
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 27px;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: var(--headingFontFamily);
+}
+
+.web-security-content .features-list li i {
+  color: var(--primaryColor);
+  position: absolute;
+  font-size: 20px;
+  top: 3px;
+  left: 0;
+}
+
+.web-security-content .features-list li:last-child {
+  margin-bottom: 0;
+}
+
+.web-security-content .shape4 {
+  bottom: 25%;
+  left: auto;
+  right: 15%;
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+  .web-security-content {
+    padding: 60px 20px;
+    max-width: 100%;
+    margin-left: 0;
+  }
+  .web-security-content h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+  .web-security-content .features-list {
+    margin-top: 15px;
+  }
+  .web-security-content .features-list li {
+    padding-left: 22px;
+    font-size: 14px;
+  }
+  .web-security-content .features-list li i {
+    font-size: 14px;
+    top: 3px;
+  }
+}
+
+/* Min width 576px to Max width 767px */
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .web-security-content {
+    padding: 60px;
+    max-width: 600px;
+  }
+  .web-security-content h2 {
+    font-size: 29px;
+  }
+  .web-security-content .features-list li {
+    padding-left: 24px;
+    font-size: 15px;
+  }
+  .web-security-content .features-list li i {
+    font-size: 14px;
+    top: 3px;
+  }
+}
+
+/* Min width 992px to Max width 1199px */
+/* Min width 1200px to Max width 1399px */
+/* Min width 1550px */

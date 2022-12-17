@@ -1,0 +1,111 @@
+.faq-sidebar {
+    z-index: 1;
+    position: relative;
+    border-radius: 5px;
+    background: {
+        image: url(../../../../assets/img/operation-center.jpg);
+        position: center center;
+        repeat: no-repeat;
+        size: cover;
+    };
+    ul {
+        padding: 30px;
+        margin-bottom: 0;
+        list-style-type: none;
+        font-family: var(--headingFontFamily);
+        
+        li {
+            margin-bottom: 18px;
+            padding-bottom: 18px;
+            color: var(--whiteColor);
+            border-bottom: 1px solid #5a5959;
+
+            a {
+                display: inline-block;
+                color: var(--whiteColor);
+                font: {
+                    size: 17px;
+                    weight: 600;
+                };
+                &:hover, &.active {
+                    color: var(--primaryColor);
+                }
+            }
+            &:last-child {
+                margin-bottom: 0;
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+        }
+    }
+    &::before {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        content: '';
+        opacity: .70;
+        border-radius: 5px;
+        position: absolute;
+        background: #000000;
+    }
+}
+.faq-accordion {
+    background-color: var(--whiteColor);
+    border: 1px solid #eeeeee;
+    border-bottom: none;
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .faq-sidebar {
+        margin-bottom: 30px;
+
+        ul {
+            padding: 20px;
+
+            li {
+                margin-bottom: 15px;
+                padding-bottom: 15px;
+
+                a {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .faq-sidebar {
+        margin-bottom: 25px;
+
+        ul {
+            padding: 25px;
+
+            li {
+                a {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1550px */
+@media only screen and (min-width: 1550px) {}
